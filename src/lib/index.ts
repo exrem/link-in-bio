@@ -1,57 +1,3 @@
-/* Local */
-
-export type SpotifyDataArtist = {
-  name: string
-  link: string
-}
-
-export type SpotifyData = {
-  song_name: string
-  song_link: string
-  artists: SpotifyDataArtist[]
-}
-
-/* Discord */
-
-export type DiscordTokenResponse = {
-  token_type: string
-  access_token: string
-  expires_in: number
-  scope: string
-}
-
-export type DiscordAvatarDecorationData = {
-  asset: string
-  sku_id: string
-}
-
-export type DiscordUserResponse = {
-  id: string
-  username: string
-  avatar: string
-  discriminator: string
-  public_flags: number
-  premium_type: number
-  flags: number
-  banner: string
-  accent_color: number
-  global_name: string
-  avatar_decoration_data: DiscordAvatarDecorationData
-  banner_color: string
-  mfa_enabled: boolean
-  locale: string
-}
-
-/* Spotify */
-
-export type SpotifyTokenResponse = {
-  access_token: string
-  token_type: string
-  expires_in: number
-  refresh_token: string
-  scope: string
-}
-
 export type SpotifyDisallows = {
   resuming: boolean
 }
@@ -68,7 +14,7 @@ export type SpotifyExternalUrls = {
   spotify: string
 }
 
-export type Spotify = {
+export type SpotifyImage = {
   height: number
   url: string
   width: number
@@ -90,7 +36,7 @@ export type SpotifyAlbum = {
   external_urls: SpotifyExternalUrls
   href: string
   id: string
-  images: Spotify[]
+  images: SpotifyImage[]
   name: string
   release_date: Date
   release_date_precision: string
