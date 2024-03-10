@@ -15,7 +15,7 @@
     { name: "github", url: "https://github.com/exrem", color: "white" },
     {
       name: "reddit",
-      url: "https://reddit.com/r/eraykim",
+      url: "https://reddit.com/u/eraykim",
       color: "color(display-p3 0.9216 0.3333 0.1569)",
     },
     { name: "x", url: "https://x.com/erayreperit", color: "white" },
