@@ -18,6 +18,11 @@
       url: "https://reddit.com/u/eraykim",
       color: "color(display-p3 0.9216 0.3333 0.1569)",
     },
+    {
+      name: "tiktok",
+      url: "https://tiktok.com/@erayreperit",
+      color: "white",
+    },
     { name: "x", url: "https://x.com/erayreperit", color: "white" },
     { name: "youtube", url: "https://youtube.com/@atmosph", color: "red" },
   ] as const;

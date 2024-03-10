@@ -17,12 +17,28 @@
     <div id="container">
       <img src={$spotify?.album.images[0].url} alt={$spotify.name} />
 
-      <div id="texts">
-        <span id="listening-to">Listening to:</span>
-        <span id="meta"
+      <div id="overlay">
+        <span id="top-text">Listening to:</span>
+        <span id="bottom-text"
           ><span id="title">{$spotify.name}</span>
-          <span id="artist"
-            >by {$spotify.artists.map((artist) => artist.name).join(", ")}</span
+          <span id="subtitle"
+            >by {$spotify.artists.map((subtitle) => subtitle.name).join(", ")}</span
+          ></span
+        >
+      </div>
+    </div>
+  </a>
+{:else}
+  <a href="https://knowyourmeme.com/memes/blehhhhh-p-cat">
+    <div id="container">
+      <img src="https://i.kym-cdn.com/entries/icons/original/000/041/742/cover3.jpg" alt="BLEHHHHH :P Cat" />
+
+      <div id="overlay">
+        <span id="top-text">Silly Cat</span>
+        <span id="bottom-text"
+          ><span id="title">Image taken</span>
+          <span id="subtitle"
+            >from KnowYourMeme</span
           ></span
         >
       </div>
@@ -51,7 +67,7 @@
     filter: brightness(0.6);
   }
 
-  #texts {
+  #overlay {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,7 +80,7 @@
     height: calc(100% - 40px);
   }
 
-  #listening-to {
+  #top-text {
     font-weight: 700;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -74,7 +90,7 @@
     font-weight: 700;
   }
 
-  #artist {
+  #subtitle {
     color: #ccc;
   }
 </style>
