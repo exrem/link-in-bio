@@ -13,9 +13,13 @@
       color: "#ff0069",
     },
     { name: "github", url: "https://github.com/exrem", color: "white" },
-    { name: "reddit", url: "https://reddit.com/r/eraykim", color: "color(display-p3 0.9216 0.3333 0.1569)" },
+    {
+      name: "reddit",
+      url: "https://reddit.com/r/eraykim",
+      color: "color(display-p3 0.9216 0.3333 0.1569)",
+    },
     { name: "x", url: "https://x.com/erayreperit", color: "white" },
-    { name: "youtube", url: "https://youtube.com/@atmosph", color: "red" }
+    { name: "youtube", url: "https://youtube.com/@atmosph", color: "red" },
   ] as const;
 </script>
 

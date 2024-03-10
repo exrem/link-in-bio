@@ -19,7 +19,12 @@
 
       <div id="texts">
         <span id="listening-to">Listening to:</span>
-        <span id="meta"><span id="title">{$spotify.name}</span> <span id="artist">by {$spotify.artists.map((artist) => artist.name).join(", ")}</span></span>
+        <span id="meta"
+          ><span id="title">{$spotify.name}</span>
+          <span id="artist"
+            >by {$spotify.artists.map((artist) => artist.name).join(", ")}</span
+          ></span
+        >
       </div>
     </div>
   </a>
@@ -43,7 +48,7 @@
 
   #container:hover img {
     scale: 1.08;
-    filter: brightness(0.6)
+    filter: brightness(0.6);
   }
 
   #texts {
@@ -70,6 +75,6 @@
   }
 
   #artist {
-    color: #ccc
+    color: #ccc;
   }
 </style>
