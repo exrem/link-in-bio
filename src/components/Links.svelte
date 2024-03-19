@@ -26,7 +26,7 @@
     },
     {
       name: "wikimedia",
-      url: "https://meta.wikimedia.org/User/Əkrəm_Cəfər",
+      url: "https://meta.wikimedia.org/wiki/User:Əkrəm_Cəfər",
       color: "#396",
     },
     { name: "x", url: "https://x.com/erayreperit", color: "white" },
