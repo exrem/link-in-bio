@@ -1,7 +1,8 @@
 <script lang="ts">
   import Icon from "./Icon.svelte";
+  import type { IconName } from "$lib";
 
-  const links = [
+  const links: { name: IconName; url: string; color: string }[] = [
     {
       name: "discord",
       url: "https://discord.com/users/339514931277856778",
@@ -22,6 +23,11 @@
       name: "tiktok",
       url: "https://tiktok.com/@erayreperit",
       color: "white",
+    },
+    {
+      name: "wikimedia",
+      url: "https://meta.wikimedia.org/User/Əkrəm_Cəfər",
+      color: "#396",
     },
     { name: "x", url: "https://x.com/erayreperit", color: "white" },
     { name: "youtube", url: "https://youtube.com/@atmosph", color: "red" },
@@ -53,5 +59,10 @@
 
   #links a:hover {
     color: var(--color);
+  }
+
+  #links a[href="https://tiktok.com/@erayreperit"]:hover
+  {
+    filter: drop-shadow(-2px -2px #00f2ea) drop-shadow(2px 2px #ff0050);
   }
 </style>

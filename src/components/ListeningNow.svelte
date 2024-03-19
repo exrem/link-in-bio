@@ -3,43 +3,50 @@
   import { writable } from "svelte/store";
   import type { SpotifyItem } from "$lib";
 
-  const spotify = writable<null | SpotifyItem>(null);
+  const spotify = writable<SpotifyItem | null | undefined>(undefined);
 
   onMount(() => {
     fetch("/api/spotify")
       .then((res) => res.json())
-      .then((data) => spotify.set(data.item));
+      .then((data) => (console.log(data.item), spotify.set(data.item)));
   });
 </script>
 
 {#if $spotify}
-  <a href={$spotify.uri}>
+  <a
+    href={$spotify.uri.startsWith("spotify:local:")
+      ? "https://youtu.be/dQw4w9WgXcQ?feature=shared"
+      : $spotify.uri}
+  >
     <div id="container">
-      <img src={$spotify?.album.images[0].url} alt={$spotify.name} />
+      <img
+        src={$spotify.album.images[0]?.url ?? "/music.jpg"}
+        alt={$spotify.name}
+      />
 
       <div id="overlay">
         <span id="top-text">Listening to:</span>
         <span id="bottom-text"
           ><span id="title">{$spotify.name}</span>
           <span id="subtitle"
-            >by {$spotify.artists.map((subtitle) => subtitle.name).join(", ")}</span
+            >by {$spotify.artists
+              .map((subtitle) => subtitle.name)
+              .join(", ")}</span
           ></span
         >
       </div>
     </div>
   </a>
-{:else}
+{:else if $spotify === null}
   <a href="https://knowyourmeme.com/memes/blehhhhh-p-cat">
     <div id="container">
-      <img src="https://i.kym-cdn.com/entries/icons/original/000/041/742/cover3.jpg" alt="BLEHHHHH :P Cat" />
+      <img src="/silly.jpeg" alt="BLEHHHHH :P Cat" />
 
       <div id="overlay">
         <span id="top-text">Silly Cat</span>
         <span id="bottom-text"
           ><span id="title">Image taken</span>
-          <span id="subtitle"
-            >from KnowYourMeme</span
-          ></span
+          <span id="subtitle">from KnowYourMeme</span></span
         >
       </div>
     </div>

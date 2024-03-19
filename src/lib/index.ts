@@ -1,3 +1,13 @@
+export type IconName =
+  | "discord"
+  | "instagram"
+  | "github"
+  | "reddit"
+  | "tiktok"
+  | "wikimedia"
+  | "x"
+  | "youtube";
+
 export type SpotifyDisallows = {
   resuming: boolean;
 };
